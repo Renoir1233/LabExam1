@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Identity Cipher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Identity Cipher</h1>
+        <p class="subtitle">Caesar Cipher (Security Demo): E = (X + N) % 26 and D = (X - N) % 26</p>
+        
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-group full-width">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="First Name">
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="yearLevel">Year Level</label>
+                    <input type="text" id="yearLevel" placeholder="3rd Year">
+                </div>
+                
+                <div class="input-group">
+                    <label for="course">Course</label>
+                    <input type="text" id="course" placeholder="BSIT">
+                </div>
+            </div>
+            
+            <div class="input-group full-width">
+                <label for="keyN">Key (N) — shift 1 to 25</label>
+                <input type="number" id="keyN" min="1" max="25" placeholder="Enter key (1-25)">
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error"></div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <button onclick="encrypt()" class="btn-encrypt" aria-label="Encrypt the plaintext using Caesar cipher">Encrypt</button>
+            <button onclick="decrypt()" class="btn-decrypt" aria-label="Decrypt the ciphertext using Caesar cipher">Decrypt</button>
+            <button onclick="clearAll()" class="btn-clear" aria-label="Clear all input and output fields">Clear</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="output-section">
+            <div class="output-box">
+                <label for="plaintextDisplay">Input (Combined Plaintext)</label>
+                <textarea id="plaintextDisplay" readonly aria-label="Combined plaintext input display"></textarea>
+            </div>
+            
+            <div class="output-box">
+                <label for="cipherOutput">Output</label>
+                <textarea id="cipherOutput" readonly aria-label="Encrypted or decrypted output"></textarea>
+            </div>
+        </div>
+
+        <!-- Note -->
+        <p class="note">Note: Only letters are shifted (A–Z). Numbers/symbols remain unchanged.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
